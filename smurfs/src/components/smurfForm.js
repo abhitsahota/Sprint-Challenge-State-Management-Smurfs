@@ -20,7 +20,8 @@ const SmurfForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.addSmurf(field)
+        const character = {...field, id: (props.smurfs.length) }
+        props.addSmurf(character)
         setField({
             name: '',
             age: '',
@@ -60,4 +61,10 @@ const SmurfForm = props => {
     )
 }
 
-export default connect(null, { addSmurf })(SmurfForm);
+const mapStateToProps = (state) => {
+    return {
+        smurfs: state.smurfs,
+    }
+}
+
+export default connect(mapStateToProps, { addSmurf })(SmurfForm);

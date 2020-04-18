@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { fetchSmurfs } from '../actions/fetchSmurfs'
 import { connect } from 'react-redux';
 
-import { Smurf } from './smurf'
+import Smurf from './smurf'
 
 const SmurfList = props => {
 
@@ -10,7 +10,6 @@ const SmurfList = props => {
         props.fetchSmurfs()
     }, [])
 
-    console.log(props)
     return (
         <div>
         <h2>List of Smurfs</h2>

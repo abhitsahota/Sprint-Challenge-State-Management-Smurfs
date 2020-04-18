@@ -7,8 +7,8 @@ export const ADD_FAIL = 'ADD_FAIL'
 export const addSmurf = character => dispatch => {
     dispatch({ type: ADDING })
     console.log(character)
-    axios.
-        post(`http://localhost:3333/smurfs`, character)
+    axios
+        .post(`http://localhost:3333/smurfs`, character)
         .then(res => {
             dispatch({ type: ADD_SUCCESS, payload: res.data })
         })
